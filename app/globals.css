@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* ========================================
+   THEME VARIABLES
+======================================== */
+
+:root {
+  --background: #050505;
+  --surface: #111111;
+  --surface-2: #181818;
+
+  --gold: #d4af37;
+  --gold-light: #f6de8d;
+  --gold-dark: #9d7a15;
+
+  --white: #ffffff;
+  --gray: #b8b8b8;
+
+  --border: rgba(212, 175, 55, 0.15);
+
+  --font-heading: var(--font-cinzel);
+  --font-body: var(--font-poppins);
+  --font-luxury: var(--font-cormorant);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+
+  --color-text: var(--white);
+  --color-gray: var(--gray);
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HTML
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+  background: #050505;
+  color: white;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+p,
+span,
+button,
+input,
+textarea,
+a {
+  font-family: var(--font-body);
+}
+
+.luxury {
+  font-family: var(--font-luxury);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+button {
+  cursor: none;
+  transition: all .35s ease;
+}
+
+/* ========================================
+   INPUTS
+======================================== */
+
+input,
+textarea {
+  color: white;
+  border: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+/* ========================================
+   IMAGES
+======================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    var(--gold-dark),
+    var(--gold),
+    var(--gold-light)
+  );
+  border-radius: 30px;
+}
+
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection {
+  background: var(--gold);
+  color: black;
+}
+
+/* ========================================
+   GOLD GLOW
+======================================== */
+
+.gold-glow {
+  box-shadow:
+    0 0 20px rgba(212,175,55,.25),
+    0 0 40px rgba(212,175,55,.20),
+    0 0 80px rgba(212,175,55,.15);
+}
+
+/* ========================================
+   GLASS EFFECT
+======================================== */
+
+.glass {
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212,175,55,.15);
+}
+
+/* ========================================
+   GOLD BORDER
+======================================== */
+
+.gold-border {
+  border: 1px solid rgba(212,175,55,.25);
+}
+
+/* ========================================
+   HOVER
+======================================== */
+
+.hover-lift {
+  transition: all .35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+}
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+.fade-up {
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes glow {
+
+  0% {
+    box-shadow: 0 0 10px rgba(212,175,55,.20);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(212,175,55,.50),
+      0 0 60px rgba(212,175,55,.30);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(212,175,55,.20);
+  }
+
+}
+
+.glow {
+  animation: glow 3s infinite;
+}
+
+/* ========================================
+   PARTICLES
+======================================== */
+
+canvas {
+  pointer-events: none;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width:768px){
+
+  body{
+    cursor:auto;
+  }
+
+  button{
+    cursor:pointer;
+  }
+
+}
