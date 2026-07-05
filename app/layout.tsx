@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,18 +25,22 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Premium Interior Designers in Madurai offering Modular Kitchen, False Ceiling, Vinyl Flooring, Carpet Flooring, Imported Wallpapers, Mosquito Nets, Gym Flooring and Complete Interior Solutions.",
+    "Premium Interior Designers in Madurai specializing in Luxury Interiors, Modular Kitchen, False Ceiling, Vinyl Flooring, Carpet Flooring, Imported Wallpapers, Mosquito Nets, Gym Flooring and Complete Interior Solutions.",
 
   keywords: [
     "Interior Designer Madurai",
-    "Interior Design",
+    "Luxury Interior Designer Madurai",
+    "Interior Design Madurai",
     "Modular Kitchen Madurai",
-    "False Ceiling",
-    "Vinyl Flooring",
-    "Carpet Flooring",
-    "Imported Wallpaper",
-    "Mosquito Net",
-    "Gym Flooring",
+    "False Ceiling Madurai",
+    "Vinyl Flooring Madurai",
+    "Carpet Flooring Madurai",
+    "Imported Wallpaper Madurai",
+    "Mosquito Net Madurai",
+    "Gym Flooring Madurai",
+    "Home Interiors Madurai",
+    "Office Interiors Madurai",
+    "Commercial Interior Designers",
     "Renguin Interiors",
   ],
 
@@ -52,6 +57,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
   },
 
   verification: {
@@ -59,18 +71,15 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://renguin-interiors.vercel.app",
+    siteName: "Renguin Interiors",
+
     title: "Renguin Interiors | Premium Interior Designers in Madurai",
 
     description:
-      "Luxury Interior Design, Flooring, Wallpapers, False Ceiling and Complete Interior Solutions.",
-
-    url: "https://renguin-interiors.vercel.app",
-
-    siteName: "Renguin Interiors",
-
-    locale: "en_IN",
-
-    type: "website",
+      "Luxury Interior Design, Modular Kitchen, False Ceiling, Flooring, Imported Wallpapers, Mosquito Nets and Complete Interior Solutions.",
 
     images: [
       {
@@ -95,6 +104,8 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -109,6 +120,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleAnalytics />
+
+        <LocalBusinessSchema />
 
         {children}
       </body>
